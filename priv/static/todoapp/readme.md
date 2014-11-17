@@ -1,38 +1,36 @@
-# React TodoMVC Example
+# AngularJS TodoMVC Example
 
-> React is a JavaScript library for creating user interfaces. Its core principles are declarative code, efficiency, and flexibility. Simply specify what your component looks like and React will keep it up-to-date when the underlying data changes.
+> HTML is great for declaring static documents, but it falters when we try to use it for declaring dynamic views in web-applications. AngularJS lets you extend HTML vocabulary for your application. The resulting environment is extraordinarily expressive, readable, and quick to develop.
 
-> _[React - facebook.github.io/react](http://facebook.github.io/react)_
+> _[AngularJS - angularjs.org](http://angularjs.org)_
 
 
-## Learning React
-
-The [React getting started documentation](http://facebook.github.io/react/docs/getting-started.html) is a great way to get started.
+## Learning AngularJS
+The [AngularJS website](http://angularjs.org) is a great resource for getting started.
 
 Here are some links you may find helpful:
 
-* [Documentation](http://facebook.github.io/react/docs/getting-started.html)
-* [API Reference](http://facebook.github.io/react/docs/reference.html)
-* [Blog](http://facebook.github.io/react/blog/)
-* [React on GitHub](https://github.com/facebook/react)
-* [Support](http://facebook.github.io/react/support.html)
+* [Tutorial](http://docs.angularjs.org/tutorial)
+* [API Reference](http://docs.angularjs.org/api)
+* [Developer Guide](http://docs.angularjs.org/guide)
+* [Applications built with AngularJS](http://builtwith.angularjs.org)
+* [Blog](http://blog.angularjs.org)
+* [FAQ](http://docs.angularjs.org/misc/faq)
+* [AngularJS Meetups](http://www.youtube.com/angularjs)
 
 Articles and guides from the community:
 
-* [Philosophy](http://www.quora.com/Pete-Hunt/Posts/React-Under-the-Hood)
-* [How is Facebook's React JavaScript library](http://www.quora.com/React-JS-Library/How-is-Facebooks-React-JavaScript-library)
-* [React: Under the hood](http://www.quora.com/Pete-Hunt/Posts/React-Under-the-Hood)
+* [Code School AngularJS course](https://www.codeschool.com/courses/shaping-up-with-angular-js)
+* [5 Awesome AngularJS Features](http://net.tutsplus.com/tutorials/javascript-ajax/5-awesome-angularjs-features)
+* [Using Yeoman with AngularJS](http://briantford.com/blog/angular-yeoman.html)
+* [me&ngular - an introduction to MVW](http://stephenplusplus.github.io/meangular)
 
-Get help from other React users:
+Get help from other AngularJS users:
 
-* [React on StackOverflow](http://stackoverflow.com/questions/tagged/reactjs)
-* [Mailing list on Google Groups](https://groups.google.com/forum/#!forum/reactjs)
-*
+* [Walkthroughs and Tutorials on YouTube](http://www.youtube.com/playlist?list=PL1w1q3fL4pmgqpzb-XhG7Clgi67d_OHXz)
+* [Google Groups mailing list](https://groups.google.com/forum/?fromgroups#!forum/angular)
+* [angularjs on Stack Overflow](http://stackoverflow.com/questions/tagged/angularjs)
+* [AngularJS on Twitter](https://twitter.com/angularjs)
+* [AngularjS on Google +](https://plus.google.com/+AngularJS/posts)
+
 _If you have other helpful links to share, or find any of the links above no longer work, please [let us know](https://github.com/tastejs/todomvc/issues)._
-
-
-## Running
-
-The app is built with [JSX](http://facebook.github.io/react/docs/jsx-in-depth.html) and compiled at runtime for a lighter and more fun code reading experience. As stated in the link, JSX is not mandatory.
-
-To run the app, spin up an HTTP server (e.g. `python -m SimpleHTTPServer`) and visit http://localhost/.../myexample/.
