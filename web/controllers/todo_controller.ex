@@ -19,8 +19,9 @@ defmodule Todo.TodoController do
     case Item.validate(item) do
       [] ->
         Repo.insert(item)
+        json conn, 200, JSON.encode!(item)
       _ ->
-        nil
+        json conn, 200, JSON.encode!("Fel")
     end
   end
 
