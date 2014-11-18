@@ -5,8 +5,12 @@ defmodule Todo.TodoController do
   plug :action
 
   def show(conn, _params) do
-    meck = JSON.encode!(%{name: "David", surname: "Davidson"})
-    json conn, 200, meck
+    todos = [
+      %{title: "Meck", completed: false}
+    ]
+    todosJson = JSON.encode!(todos)
+
+    json conn, 200, todosJson
   end
 
 end
