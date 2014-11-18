@@ -6,6 +6,8 @@ defmodule Todo.Router do
     pipe_through :browser
 
     get "/", Todo.PageController, :index, as: :pages
+
+    get "/todos", Todo.TodoController, :show
   end
 
   # Other scopes may use custom stacks.
