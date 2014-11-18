@@ -6,10 +6,11 @@
  * - exposes the model to the template and provides event handlers
  */
 angular.module('todomvc')
-	.controller('TodoCtrl', function TodoCtrl($scope, $routeParams, $filter, store) {
+	.controller('TodoCtrl', function TodoCtrl($scope, $routeParams, $filter, Todo) {
 		'use strict';
 
-		var todos = $scope.todos = store.todos;
+		var todos = $scope.todos = Todo.query();
+		console.log('Todos', todos);
 
 		$scope.newTodo = '';
 		$scope.editedTodo = null;
@@ -30,23 +31,27 @@ angular.module('todomvc')
 		});
 
 		$scope.addTodo = function () {
-			var newTodo = {
+			var todoData = {
 				title: $scope.newTodo.trim(),
 				completed: false
 			};
 
-			if (!newTodo.title) {
+			if (!todoData.title) {
 				return;
 			}
 
 			$scope.saving = true;
-			store.insert(newTodo)
-				.then(function success() {
-					$scope.newTodo = '';
-				})
-				.finally(function () {
-					$scope.saving = false;
-				});
+
+			var newTodo = new Todo(todoData);
+			newTodo.$save(function() {
+				$scope.newTodo = '';
+				$scope.saving = false;
+			});
+			// store.insert(newTodo)
+			// 	.then(function success() {
+			// 	})
+			// 	.finally(function () {
+			// 	});
 		};
 
 		$scope.editTodo = function (todo) {
