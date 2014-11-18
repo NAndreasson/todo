@@ -22,7 +22,11 @@ defmodule Todo.Mixfile do
   #
   # Type `mix help deps` for examples and options
   defp deps do
-    [{:phoenix, "0.5.0"},
-     {:cowboy, "~> 1.0"}]
+    [
+      {:phoenix, "0.5.0"},
+      {:cowboy, "~> 1.0"},
+      {:postgrex, ">= 0.0.0"},
+      {:ecto, "~> 0.2.0"}
+    ]
   end
 end
