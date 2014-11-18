@@ -8,6 +8,7 @@ defmodule Todo.Router do
     get "/", Todo.PageController, :index, as: :pages
 
     get "/todos", Todo.TodoController, :show
+    post "/todos", Todo.TodoController, :create
   end
 
   # Other scopes may use custom stacks.
