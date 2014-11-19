@@ -99,7 +99,7 @@ angular.module('todomvc')
 		};
 
 		$scope.removeTodo = function (todo) {
-			store.delete(todo);
+			todo.$delete();
 		};
 
 		$scope.saveTodo = function (todo) {

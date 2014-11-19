@@ -10,6 +10,7 @@ defmodule Todo.Router do
     get "/todos", Todo.TodoController, :show
     post "/todos", Todo.TodoController, :create
     post "/todos/:id", Todo.TodoController, :update
+    delete "/todos/:id", Todo.TodoController, :destroy
   end
 
   # Other scopes may use custom stacks.

@@ -40,6 +40,13 @@ defmodule Todo.TodoController do
     # json conn, 200, JSON.encode!(item)
   end
 
+  def destroy(conn, %{"id" => id}) do
+    item = Repo.get(Item, String.to_integer(id))
+    Repo.delete(item)
+
+    json conn, 200, JSON.encode!(item)
+  end
+
   defp atomize_keys(struct) do
     Enum.reduce struct, %{}, fn({k, v}, map) -> Map.put(map, String.to_atom(k), v) end
   end
