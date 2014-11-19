@@ -4,7 +4,9 @@
 angular.module('todomvc')
 .factory('Todo', ['$resource',
   function($resource){
-    return $resource('todos', {}, {
+    return $resource('todos/:todoId', {
+      todoId: '@id'
+    }, {
       query: {method:'GET', isArray:true}
     });
   }]);

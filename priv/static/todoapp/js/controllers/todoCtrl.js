@@ -110,10 +110,15 @@ angular.module('todomvc')
 			if (angular.isDefined(completed)) {
 				todo.completed = completed;
 			}
-			store.put(todo, todos.indexOf(todo))
-				.then(function success() {}, function error() {
-					todo.completed = !todo.completed;
-				});
+
+			// change status to completed
+			todo.$save();
+
+
+			// store.put(todo, todos.indexOf(todo))
+			// 	.then(function success() {}, function error() {
+			// 		todo.completed = !todo.completed;
+			// 	});
 		};
 
 		$scope.clearCompletedTodos = function () {

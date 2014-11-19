@@ -25,6 +25,21 @@ defmodule Todo.TodoController do
     end
   end
 
+  def update(conn, %{"id" => id, "completed" => completed}) do
+    item = Repo.get(Item, String.to_integer(id))
+    item = %{item | completed: completed}
+
+    case Item.validate(item) do
+      [] ->
+        Repo.update(item)
+        json conn, 200, JSON.encode!(item)
+      errors ->
+        json conn, errors: errors
+    end
+
+    # json conn, 200, JSON.encode!(item)
+  end
+
   defp atomize_keys(struct) do
     Enum.reduce struct, %{}, fn({k, v}, map) -> Map.put(map, String.to_atom(k), v) end
   end
