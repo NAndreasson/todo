@@ -7,6 +7,8 @@ defmodule Todo.Router do
 
     get "/", Todo.PageController, :index, as: :pages
 
+    get "/boards", Todo.TodoController, :boards
+
     get "/todos", Todo.TodoController, :show
     post "/todos", Todo.TodoController, :create
     post "/todos/:id", Todo.TodoController, :update

@@ -7,15 +7,16 @@ defmodule Todo.TodoController do
   plug :action
 
   def show(conn, _params) do
-    todos = Repo.all(Item
-      |> where([item], item.completed == false))
+    # query = from(item in Item, where: item.completed == false, preload: :main_board)
+
+    todos = Repo.all(Item)
 
     todosJson = JSON.encode!(todos)
     json conn, 200, todosJson
   end
 
   def create(conn, _params) do
-    item = Map.merge(%Item{completed: false}, atomize_keys(_params))
+    item = Map.merge(%Item{completed: false, main_board_id: 1}, atomize_keys(_params))
     case Item.validate(item) do
       [] ->
         Repo.insert(item)
@@ -45,6 +46,18 @@ defmodule Todo.TodoController do
     Repo.delete(item)
 
     json conn, 200, JSON.encode!(item)
+  end
+
+  defimpl Poison.Encoder, for: Tuple do
+    def encode(proxy, options) do
+      Poison.Encoder.List.encode(proxy.all, options)
+    end
+  end
+
+  def boards(conn, _params) do
+    boards = Repo.all(from m in MainBoard, preload: [:items])
+
+    json conn, 200, JSON.encode!(boards)
   end
 
   defp atomize_keys(struct) do
